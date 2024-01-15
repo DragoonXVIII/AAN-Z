@@ -4,10 +4,6 @@ using namespace std;
 
 int main()
 {
-<<<<<<< Updated upstream
-    cout << "Hello World!" << endl;
-=======
-
     int n;
     cout<<"Wprowadz liczbe wezlow: ";
     cin>>n;
@@ -149,6 +145,5 @@ int main()
     }
     cout<<"Wynik to: "<<result<<endl<<resultS;
 
->>>>>>> Stashed changes
     return 0;
 }
