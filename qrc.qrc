@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/assets">
-        <file>assets/back.svg</file>
-        <file>assets/icon.svg</file>
-    </qresource>
-</RCC>

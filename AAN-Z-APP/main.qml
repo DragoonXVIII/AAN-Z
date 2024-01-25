@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
+
+
 ApplicationWindow
 {
     visible: true
@@ -22,17 +24,7 @@ ApplicationWindow
         height: parent.height / 10 * 7
         anchors.centerIn: parent
         visible: false
-
-        initialItem: num_Systems
     }
-
-    Rectangle
-    {
-        id: num_Systems
-        anchors.fill: parent
-        color: "orange"
-    }
-
 
     Item
     {
@@ -45,8 +37,8 @@ ApplicationWindow
         ListModel
         {
             id: algorithmsModel
-            ListElement { name: "Numeral systems"; source: "Num_Systems.qml" }
-            ListElement { name: "Horner's method"; source: "Horner.qml" }
+            ListElement { name: "Numeral systems"; source: "qrc:/ui/Num_Systems/Num_Systems.qml" }
+            ListElement { name: "Horner's method"; source: "qrc:/ui/Horner/Horner.qml" }
             ListElement { name: "Lagrange's Interpolation"; source: "Lagrange.qml" }
             ListElement { name: "Newton's Interpolation"; source: "Newton.qml" }
             ListElement { name: "Neville's Formula"; source: "Neville.qml" }
@@ -79,9 +71,11 @@ ApplicationWindow
                     height: parent.height/10*9
                     anchors.centerIn: parent
                     color: "#ED2939"
+
                     Column
                     {
                         width: parent.width
+                        anchors.verticalCenter: parent.verticalCenter
                         spacing: 10
                         Image
                         {
@@ -90,7 +84,7 @@ ApplicationWindow
                             //width: rectangleTile.width/10*7
                             //height: rectangleTile.width/10*7
                             fillMode: Image.PreserveAspectFit
-                            source: "qrc:/assets/assets/icon.svg"
+                            source: "qrc:/ui/assets/icon.svg"
                         }
                         Text
                         {
@@ -112,9 +106,10 @@ ApplicationWindow
                     onClicked:
                     {
                         backButton.visible = true;
+                        algorithmsWorkSpace.clear()
+                        algorithmsWorkSpace.push(model.source)
                         menu.visible = false;
                         algorithmsWorkSpace.visible = true;
-
                     }
                 }
             }
@@ -137,7 +132,7 @@ ApplicationWindow
             sourceSize: Qt.size(32, 32)
             anchors.bottom: parent.bottom
             anchors.right: parent.right
-            source: "qrc:/assets/assets/back.svg"
+            source: "qrc:/ui/assets/back.svg"
             fillMode: Image.PreserveAspectFit
         }
 
@@ -155,84 +150,56 @@ ApplicationWindow
     }
 }
 
-
-/*import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-
-ApplicationWindow
-{
-    visible: true
-    width: 1600
-    height: 900
-    title: "AAN-Z: Numerical Analysis Algorithms POLLUB"
-    color: "blue"
-
-    ListModel
-    {
-        id: titlesModel
-        ListElement { name: "Numeral systems"; source: "Num_Systems.qml" }
-        ListElement { name: "Horner's method"; source: "Horner.qml" }
-        ListElement { name: "Lagrange's Interpolation"; source: "Lagrange.qml" }
-        ListElement { name: "Newton's Interpolation"; source: "Newton.qml" }
-        ListElement { name: "Neville's Formula"; source: "Neville.qml" }
-        ListElement { name: "Hermite Interpolation"; source: "Hermite.qml" }
-        ListElement { name: "Least Squares Method"; source: "Least_Squares_Method.qml" }
-        ListElement { name: "Numerical Integration (examples)"; source: "Num_Integration.qml" }
-    }
-
+/*
     Item
     {
-        width: parent.width/10*7
-        height: parent.height/10*7
-
-        GridView
+        id: components
+        Component
         {
-            id: algorithmsView;
-            width: parent.width;
-            height: parent.height;
-            cellHeight: height/2
-            cellWidth: width/8
-            model: titlesModel
-            delegate:  Item
-            {
-                Rectangle
-                {
-                    width: parent.width/10*9
-                    height: parent.height/10*9
-                    color: "red"
-                }
+            id: num_Systems
+            Num_Systems {}
+        }
 
-            }
+        Component
+        {
+            id: horner
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: nagrange
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: newton
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: neville
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: hermite
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: least_Squares_Method
+            Num_Systems {}
+        }
+
+        Component
+        {
+            id: num_Integration
+            Num_Systems {}
         }
     }
-
-    Rectangle
-    {
-        id: backButton
-        width: parent.width/16
-        height: parent.height/16
-        anchors.top: parent.top
-        anchors.left: parent.left
-        color: "yellow"
-        Image
-        {
-            anchors.fill: parent
-            source: "qrc:/assets/back.svg"
-            fillMode: Image.PreserveAspectFit
-        }
-
-        visible: false
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                // Tutaj wracamy do głównego widoku po kliknięciu przycisku "Cofnij"
-                listView.visible = true;
-                backButton.visible = false;
-            }
-        }
-    }
-}
 */

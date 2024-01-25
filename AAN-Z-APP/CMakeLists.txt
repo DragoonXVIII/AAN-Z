@@ -12,13 +12,14 @@ qt_standard_project_setup()
 
 qt_add_executable(appAAN-Z-APP
     main.cpp
-    qrc.qrc
+    QML.qrc
 )
 
 qt_add_qml_module(appAAN-Z-APP
     URI AAN-Z-APP
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES main.qml
+    #QML_FILES UI/Num_Systems/Num_Systems.qml
     #qml/Num_Systems/Num_Systems.qml
     #RESOURCES assets.qrc
 )

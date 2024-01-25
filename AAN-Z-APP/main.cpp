@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/AAN-Z-APP/Main.qml"_qs);
+    const QUrl url(u"qrc:/AAN-Z-APP/main.qml"_qs);
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
@@ -16,6 +16,6 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.load(url);
 
-    app.setWindowIcon(QIcon(":/assets/assets/icon.svg"));
+    app.setWindowIcon(QIcon(":/ui/assets/icon.svg"));
     return app.exec();
 }
