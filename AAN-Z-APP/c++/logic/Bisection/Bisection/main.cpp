@@ -36,7 +36,14 @@ void bisekcja(double a, double b, double epsilon)
 
 int main()
 {
+    double a,b,epsilon;
+    cout<<"Podaj a: ";
+    cin>>a;
+    cout<<"Podaj b: ";
+    cin>>b;
+    cout<<"Podaj epsilon: ";
+    cin>>epsilon;
     cout<<"Liczenie..."<<endl;
-    bisekcja(0.0,2.0,0.05);
+    bisekcja(a,b,epsilon);
     return 0;
 }
