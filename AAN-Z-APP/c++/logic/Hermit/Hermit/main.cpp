@@ -104,7 +104,7 @@ int main()
     string HermitPTS[m]; //Hermit polynomal table (used in final formula builds)
     double result;      //result value DOUBLE
     string resultS;     //result formula STRING
-    double y[m];
+    //double y[m];
     double x[m];
 
     //zapelnienie tabeli y[m], x[m]
@@ -113,7 +113,7 @@ int main()
     {
         for(int j=0;j<timesY[i];j++)
         {
-            y[f]=valuesY[i][0];
+            //y[f]=valuesY[i][0];
             x[f]=valuesX[i];
             //cout<<y[f]<<endl;
             f++;
@@ -165,7 +165,7 @@ int main()
             }
             //napisz wpisanie 1 i czegos innego zeby wiadomo bylo co zrobic np stopien silni on chyba jes skorelowany z pochodna jako index?
         }
-        //X NIE DZIALAJA BO NIE MA TABLICY x[m] TYLKO x[n] czyli w przykladzie x[2] a nie x[5]xd
+        //X NIE DZIALAJA BO NIE MA TABLICY x[m] TYLKO x[n] czyli w przykladzie x[2] a nie x[5]xd - FIXED
     }
 
     /*for(int i=0;i<m;i++)
@@ -268,7 +268,7 @@ int main()
 
     result =0.0;
     resultS = "";
-    for(int i=0;i<n;i++)
+    for(int i=0;i<m;i++)
     {
         result+=HermitFDQ[i]*HermitPT[i];
         if(i==0)
